@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "Wireless Headphones",
+    "description": "Experience premium sound quality with active noise cancellation, comfortable over-ear design, and up to 40 hours of battery life.",
+    "image": "Headphones",
+    "price": 99.00,
+    "rating": 4.8,
+    "category": "Electronics"
+  },
+  {
+    "id": 2,
+    "title": "Minimalist Watch",
+    "description": "Sleek and elegant wristwatch featuring a high-quality leather strap, scratch-resistant glass, and waterproof design.",
+    "image": "Watch",
+    "price": 180.00,
+    "rating": 4.9,
+    "category": "Accessories"
+  },
+  {
+    "id": 3,
+    "title": "Premium Backpack",
+    "description": "Spacious and durable water-resistant backpack with dedicated compartments for a laptop, tablet, and everyday essentials.",
+    "image": "Backpack",
+    "price": 75.00,
+    "rating": 4.7,
+    "category": "Fashion"
+  },
+  {
+    "id": 4,
+    "title": "Ergonomic Mouse",
+    "description": "Reduce wrist strain with this wireless ergonomic mouse featuring customizable shortcuts, silent clicks, and long-lasting battery.",
+    "image": "Mouse",
+    "price": 45.00,
+    "rating": 4.6,
+    "category": "Office"
+  },
+  {
+    "id": 5,
+    "title": "Smart Phone 15 Pro",
+    "description": "Revolutionary mobile device featuring a stunning OLED display, pro-level cameras, high-speed performance, and all-day battery.",
+    "image": "Phones",
+    "price": 999.00,
+    "rating": 4.9,
+    "category": "Electronics"
+  },
+  {
+    "id": 6,
+    "title": "Leather Bifold Wallet",
+    "description": "Handcrafted genuine leather wallet with RFID blocking technology, multiple card slots, and a slim design.",
+    "image": "Wallet",
+    "price": 29.00,
+    "rating": 4.5,
+    "category": "Accessories"
+  },
+  {
+    "id": 7,
+    "title": "Mechanical Keyboard",
+    "description": "Tactile mechanical keyboard with customized RGB backlighting, durable switches, and ergonomic keys for gaming or coding.",
+    "image": "Keyboard",
+    "price": 120.00,
+    "rating": 4.8,
+    "category": "Office"
+  },
+  {
+    "id": 8,
+    "title": "Sports Sunglasses",
+    "description": "Polarized sports sunglasses offering 100% UV protection, lightweight frame, and anti-slip nose pad for active lifestyles.",
+    "image": "Sunglasses",
+    "price": 55.00,
+    "rating": 4.4,
+    "category": "Sports"
+  },
+  {
+    "id": 9,
+    "title": "Pro Running Shoes",
+    "description": "High-performance running shoes designed with responsive cushioning, breathable mesh upper, and high-traction rubber outsole.",
+    "image": "Shoes",
+    "price": 85.00,
+    "rating": 4.7,
+    "category": "Sports"
+  },
+  {
+    "id": 10,
+    "title": "Ceramic Travel Mug",
+    "description": "Double-wall insulated ceramic mug with a leak-proof lid, keeps your coffee or tea hot for hours while on the go.",
+    "image": "Mug",
+    "price": 15.00,
+    "rating": 4.3,
+    "category": "Home"
+  }
+]
