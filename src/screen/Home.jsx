@@ -25,24 +25,23 @@ const Home = () => {
     const [selectedCategory, setSelectedCategory] = useState(null);
 
     const categories = [
-        { id: 1, name: 'Tech', icon: '📱', colorBg: 'bg-[#dbeafe]', colorText: 'text-[#2563eb]' },
-        { id: 2, name: 'Fashion', icon: '👕', colorBg: 'bg-[#d1fae5]', colorText: 'text-[#059669]' },
-        { id: 3, name: 'Home', icon: '🏡', colorBg: 'bg-[#ffedd5]', colorText: 'text-[#ea580c]' },
-        { id: 4, name: 'Sports', icon: '⚽', colorBg: 'bg-[#f3e8ff]', colorText: 'text-[#7c3aed]' },
-        { id: 5, name: 'Beauty', icon: '💡', colorBg: 'bg-[#fce7f3]', colorText: 'text-[#db2777]' },
+        { id: 1, name: 'Tech', icon: Images.Tech, colorBg: 'bg-[#dbeafe]', colorText: 'text-[#2563eb]' },
+        { id: 2, name: 'Fashion', icon: Images.Fashion, colorBg: 'bg-[#d1fae5]', colorText: 'text-[#059669]' },
+        { id: 3, name: 'Home', icon: Images.Home2, colorBg: 'bg-[#ffedd5]', colorText: 'text-[#ea580c]' },
+        { id: 4, name: 'Sports', icon: Images.Sports, colorBg: 'bg-[#f3e8ff]', colorText: 'text-[#7c3aed]' },
+        { id: 5, name: 'Beauty', icon: Images.Beauty, colorBg: 'bg-[#fce7f3]', colorText: 'text-[#db2777]' },
     ];
 
-    // Filter products based on search query and selected category
     const filteredProducts = useMemo(() => {
         return productsData.filter((product) => {
             const matchesSearch =
                 product.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                 product.category.toLowerCase().includes(searchQuery.toLowerCase());
-            
+
             const matchesCategory = selectedCategory
                 ? product.category.toLowerCase() === selectedCategory.toLowerCase() ||
-                  (selectedCategory === 'Tech' && product.category === 'Electronics') ||
-                  (selectedCategory === 'Home' && product.category === 'Office') // Map tech/home categories
+                (selectedCategory === 'Tech' && product.category === 'Electronics') ||
+                (selectedCategory === 'Home' && product.category === 'Office')
                 : true;
 
             return matchesSearch && matchesCategory;
@@ -51,7 +50,7 @@ const Home = () => {
 
     const handleCategoryPress = (categoryName) => {
         if (selectedCategory === categoryName) {
-            setSelectedCategory(null); // Deselect if clicked again
+            setSelectedCategory(null);
         } else {
             setSelectedCategory(categoryName);
         }
@@ -59,7 +58,6 @@ const Home = () => {
 
     const renderHeader = () => (
         <View className="w-full">
-            {/* Amazon-inspired Hero Banner */}
             <View className="mx-5 mt-6 bg-gradient-to-r from-blue-500 to-indigo-600 bg-indigo-600 rounded-2xl overflow-hidden shadow-md">
                 <View className="p-6">
                     <Text className="text-[#c7d2fe] text-xs font-bold tracking-wider uppercase mb-1">Limited Offer</Text>
@@ -92,13 +90,17 @@ const Home = () => {
                             <TouchableOpacity
                                 key={item.id}
                                 onPress={() => handleCategoryPress(item.name)}
-                                className={`items-center mx-2 p-2 rounded-2xl border ${
-                                    isSelected ? 'border-yellow-500 bg-yellow-50' : 'border-transparent'
-                                }`}
+                                className={`items-center mx-2 p-2 rounded-2xl border ${isSelected ? 'border-yellow-500 bg-yellow-50' : 'border-transparent'
+                                    }`}
                                 activeOpacity={0.7}
                             >
                                 <View className={`w-14 h-14 rounded-2xl items-center justify-center mb-2 ${item.colorBg}`}>
-                                    <Text className="text-2xl">{item.icon}</Text>
+                                    <Image
+                                        source={item.icon}
+                                        className="w-8 h-8"
+                                        resizeMode="contain"
+                                        tintColor="#475569"
+                                    />
                                 </View>
                                 <Text className="text-[#475569] text-xs font-semibold">{item.name}</Text>
                             </TouchableOpacity>
@@ -107,7 +109,6 @@ const Home = () => {
                 </ScrollView>
             </View>
 
-            {/* Section Header */}
             <View className="px-5 mb-3 flex-row justify-between items-center">
                 <Text className="text-[#1e293b] text-lg font-bold">
                     {selectedCategory ? `${selectedCategory} Collection` : 'Popular Deals'}
@@ -131,7 +132,6 @@ const Home = () => {
         <View className="flex-1 bg-[#f8fafc]">
             <StatusBar barStyle="light-content" translucent backgroundColor="transparent" />
 
-            {/* Header section with Logo & Search */}
             <ImageBackground
                 source={Images.Header}
                 className="w-full rounded-bl-[32px] rounded-br-[32px] overflow-hidden"
@@ -189,7 +189,6 @@ const Home = () => {
                 </View>
             </ImageBackground>
 
-            {/* Performance Optimized FlatList for grid of products */}
             <FlatList
                 data={filteredProducts}
                 renderItem={({ item }) => <ProductCard product={item} />}
@@ -200,8 +199,6 @@ const Home = () => {
                 ListEmptyComponent={renderEmpty}
                 contentContainerClassName="pb-10"
                 showsVerticalScrollIndicator={false}
-                
-                // FlatList performance props
                 initialNumToRender={6}
                 maxToRenderPerBatch={10}
                 windowSize={5}

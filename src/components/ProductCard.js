@@ -8,7 +8,6 @@ const ProductCard = ({ product }) => {
     const { addToCart } = useCart();
     const navigation = useNavigation();
 
-    // Render stars based on rating
     const renderStars = (rating) => {
         const stars = [];
         const floorRating = Math.floor(rating);
@@ -29,7 +28,6 @@ const ProductCard = ({ product }) => {
             activeOpacity={0.9}
         >
             <View>
-                {/* Product Image Illustration */}
                 <View className="bg-[#f8fafc] w-full h-[120px] rounded-xl items-center justify-center mb-3 overflow-hidden">
                     <Image
                         source={Images[product.image]}
@@ -38,13 +36,11 @@ const ProductCard = ({ product }) => {
                     />
                 </View>
 
-                {/* Product Category & Title */}
                 <Text className="text-[#94a3b8] text-[10px] font-semibold uppercase tracking-wider">{product.category}</Text>
                 <Text className="text-[#1e293b] font-bold text-sm mt-1" numberOfLines={1}>
                     {product.title}
                 </Text>
 
-                {/* Rating */}
                 <View className="flex-row items-center mt-2">
                     <View className="flex-row mr-1">
                         {renderStars(product.rating)}

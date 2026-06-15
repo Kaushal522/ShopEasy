@@ -18,7 +18,6 @@ const Cart = () => {
 
     const renderCartItem = ({ item }) => (
         <View className="flex-row bg-white p-4 mb-3 rounded-2xl border border-[#f1f5f9] shadow-sm items-center">
-            {/* Item Image */}
             <View className="w-16 h-16 bg-[#f8fafc] rounded-xl overflow-hidden mr-4">
                 <Image
                     source={Images[item.image]}
@@ -27,7 +26,6 @@ const Cart = () => {
                 />
             </View>
 
-            {/* Item Meta & Actions */}
             <View className="flex-1">
                 <View className="flex-row justify-between items-start">
                     <View className="flex-1 mr-2">
@@ -47,13 +45,10 @@ const Cart = () => {
                     </TouchableOpacity>
                 </View>
 
-                {/* Price & Quantity Adjuster */}
                 <View className="flex-row justify-between items-center mt-3">
                     <Text className="text-[#4f46e5] font-black text-sm">
                         ${(item.price * item.quantity).toFixed(2)}
                     </Text>
-
-                    {/* Quantity Controls */}
                     <View className="flex-row items-center border border-[#e2e8f0] rounded-xl overflow-hidden bg-[#f8fafc]">
                         <TouchableOpacity
                             onPress={() => decreaseQuantity(item.id)}
@@ -108,7 +103,6 @@ const Cart = () => {
         <View className="flex-1 bg-[#f8fafc]">
             <StatusBar barStyle="dark-content" translucent backgroundColor="transparent" />
 
-            {/* Header */}
             <View
                 style={{ paddingTop: insets.top + 10 }}
                 className="bg-white border-b border-[#f1f5f9] px-5 pb-4 items-center justify-center"
@@ -128,7 +122,6 @@ const Cart = () => {
                         showsVerticalScrollIndicator={false}
                     />
 
-                    {/* Order Summary & Checkout */}
                     <View
                         style={{ paddingBottom: insets.bottom + 16 }}
                         className="bg-white border-t border-[#f1f5f9] px-6 pt-5"

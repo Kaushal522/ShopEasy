@@ -20,7 +20,6 @@ const Profile = () => {
         <View className="flex-1 bg-[#f8fafc]">
             <StatusBar barStyle="dark-content" translucent backgroundColor="transparent" />
 
-            {/* Custom Header */}
             <View
                 style={{ paddingTop: insets.top + 10 }}
                 className="bg-white border-b border-[#f1f5f9] px-5 pb-4 items-center justify-center"
@@ -29,18 +28,14 @@ const Profile = () => {
             </View>
 
             <ScrollView showsVerticalScrollIndicator={false} className="flex-1">
-                {/* User Card */}
                 <View className="bg-white p-6 border-b border-[#f1f5f9] items-center">
-                    {/* Avatar Bubble */}
                     <View className="w-24 h-24 bg-indigo-50 border-4 border-indigo-100 rounded-full items-center justify-center shadow-sm mb-4">
                         <Image source={Images.Profile} className="w-10 h-10" />
                     </View>
 
-                    {/* Metadata */}
                     <Text className="text-gray-900 font-extrabold text-xl">Kaushal</Text>
                     <Text className="text-gray-400 text-xs mt-1">kaushal@example.com</Text>
 
-                    {/* Quick Stats */}
                     <View className="flex-row mt-6 border-t border-gray-100 pt-4 w-full justify-around">
                         <View className="items-center">
                             <Text className="text-gray-950 font-black text-base">12</Text>
@@ -57,7 +52,6 @@ const Profile = () => {
                     </View>
                 </View>
 
-                {/* Settings Items */}
                 <View className="mt-3 bg-white border-t border-b border-[#f1f5f9] px-5 py-2">
 
                     {settingsOptions.map((option) => (
@@ -66,24 +60,18 @@ const Profile = () => {
                             activeOpacity={0.7}
                             className="flex-row items-center py-4 border-b border-gray-50 last:border-0"
                         >
-                            {/* Icon */}
                             <View className="w-10 h-10 bg-[#f8fafc] rounded-xl items-center justify-center mr-4 border border-[#f1f5f9]">
                                 <Image source={option.icon} className="w-6 h-6" tintColor={"#000"} />
                             </View>
-
-                            {/* Label */}
                             <View className="flex-1 mr-2">
                                 <Text className="text-gray-900 font-extrabold text-sm">{option.title}</Text>
                                 <Text className="text-gray-400 text-[10px] mt-0.5">{option.description}</Text>
                             </View>
-
-                            {/* Arrow */}
                             <Image source={Images.RightArrow} className="w-6 h-6" tintColor={"#000"} />
                         </TouchableOpacity>
                     ))}
                 </View>
 
-                {/* Logout Button */}
                 <View className="p-6 mb-10">
                     <TouchableOpacity
                         activeOpacity={0.8}

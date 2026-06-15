@@ -44,7 +44,6 @@ const Details = () => {
         <View className="flex-1 bg-[#f8fafc]">
             <StatusBar barStyle="dark-content" translucent backgroundColor="transparent" />
 
-            {/* Custom Header */}
             <View
                 style={{ paddingTop: insets.top + 10 }}
                 className="flex-row items-center justify-between px-5 pb-4 bg-white border-b border-[#f1f5f9]"
@@ -54,14 +53,13 @@ const Details = () => {
                     className="w-10 h-10 items-center justify-center bg-[#f1f5f9] rounded-full active:bg-gray-250"
                     activeOpacity={0.7}
                 >
-                    <Text className="text-xl font-bold text-gray-800">←</Text>
+                    <Image source={Images.RightArrow} className="w-5 h-5" style={{ transform: [{ rotate: '180deg' }] }} />
                 </TouchableOpacity>
                 <Text className="text-lg font-bold text-gray-900">Product Details</Text>
                 <View className="w-10 h-10" />
             </View>
 
             <ScrollView showsVerticalScrollIndicator={false} className="flex-1">
-                {/* Product Illustration */}
                 <View className="bg-white items-center justify-center py-12 border-b border-[#f1f5f9]">
                     <View className="w-64 h-64 bg-[#f8fafc] rounded-full overflow-hidden items-center justify-center shadow-inner">
                         <Image
@@ -72,12 +70,9 @@ const Details = () => {
                     </View>
                 </View>
 
-                {/* Details Container */}
                 <View className="p-6 bg-white mt-3 flex-1">
                     <Text className="text-[#4f46e5] text-xs font-bold uppercase tracking-widest">{product.category}</Text>
                     <Text className="text-gray-900 font-extrabold text-2xl mt-1 leading-8">{product.title}</Text>
-
-                    {/* Rating Section */}
                     <View className="flex-row items-center mt-3 border-b border-[#f1f5f9] pb-4">
                         <View className="flex-row mr-2">
                             {renderStars(product.rating)}
@@ -86,7 +81,6 @@ const Details = () => {
                         <Text className="text-gray-400 text-sm ml-2">| 120+ reviews</Text>
                     </View>
 
-                    {/* Description Section */}
                     <View className="mt-5">
                         <Text className="text-gray-900 font-bold text-base">Product Description</Text>
                         <Text className="text-gray-500 text-sm leading-6 mt-2">
@@ -94,7 +88,6 @@ const Details = () => {
                         </Text>
                     </View>
 
-                    {/* Features/Badges */}
                     <View className="flex-row flex-wrap mt-6 border-t border-b border-[#f1f5f9] py-4">
                         <View className="bg-[#f0fdf4] border border-[#bbf7d0] px-3 py-1.5 rounded-full mr-3 mb-2">
                             <Text className="text-[#16a34a] text-xs font-semibold">✓ Free Delivery</Text>
@@ -108,8 +101,6 @@ const Details = () => {
                     </View>
                 </View>
             </ScrollView>
-
-            {/* Bottom Purchase Bar */}
             <View
                 style={{ paddingBottom: insets.bottom + 16 }}
                 className="bg-white border-t border-[#f1f5f9] px-6 pt-4 flex-row justify-between items-center"
@@ -121,9 +112,9 @@ const Details = () => {
                 <TouchableOpacity
                     onPress={() => addToCart(product)}
                     activeOpacity={0.8}
-                    className="bg-yellow-400 border border-yellow-500 py-3.5 px-8 rounded-2xl items-center justify-center active:bg-yellow-500 shadow-sm"
+                    className="bg-yellow-400 border border-yellow-500 py-3.5 px-6 rounded-2xl items-center justify-center active:bg-yellow-500 shadow-sm"
                 >
-                    <Text className="text-black font-extrabold text-sm">Add to Cart</Text>
+                    <Text className="text-black font-extrabold text-sm" numberOfLines={1}>Add to Cart</Text>
                 </TouchableOpacity>
             </View>
         </View>

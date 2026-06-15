@@ -18,6 +18,11 @@ export default {
     Headphones: require('../assets/Images/Headphones.jpg'),
     Mouse: require('../assets/Images/Mouse.jpg'),
     Keyboard: require('../assets/Images/Keyboard.jpg'),
-    Watch: require('../assets/Images/Watch.png'),
-    Wallet: require('../assets/Images/Wallet.png'),
+    Watch: require('../assets/Images/Watch.jpg'),
+    Wallet: require('../assets/Images/Wallet.jpg'),
+    Beauty: require('../assets/Images/Beauty.png'),
+    Sports: require('../assets/Images/sports.png'),
+    Home2: require('../assets/Images/Home2.png'),
+    Fashion: require('../assets/Images/fashion.png'),
+    Tech: require('../assets/Images/tech.png'),
 };
